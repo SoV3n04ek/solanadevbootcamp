@@ -1,0 +1,8 @@
+npm init -y
+npm install @solana/web3.js @solana-developers/helpers esrun
+
+git add .gitignore && git commit -m "Add .gitignore with node_modules"
+
+npm install dotenv --save
+
+npx esrun load-keypair.ts
