@@ -37,3 +37,18 @@ const signature = await sendAndConfirmTransaction(connection, transaction, [
 ]);
 
 console.log(`✅ Transaction confirmed, signature: ${signature}!`);
+
+const memoProgram = new PublicKey(
+	
+);
+
+const memoText = "Hello from Solana! That's memo tag" ;
+
+const addMemoInstruction = new TransactionInstruction({
+	keys: [{ pubkey: sender.publicKey, isSigner: true, isWritable: true }],
+	data: Buffer.from(memoText, "utf-8"),
+	programId: memoProgram,
+});
+
+transaction.add(addMemoInstruction);
+console.log(`memo is: ${memoText}`);
